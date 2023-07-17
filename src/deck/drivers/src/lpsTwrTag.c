@@ -97,7 +97,7 @@ static twrState_t state;
 static lpsTwrAlgoOptions_t* options = &defaultOptions;
 
 // LOG STATE after the state variable is initialized with default values
-DEBUG_PRINT("Initial state: distance = %f, pressures = %f, failedRanging = %d", (double)*state.distance, (double)*state.pressures, *state.failedRanging);
+// DEBUG_PRINT("Initial state: distance = %f, pressures = %f, failedRanging = %d", (double)*state.distance, (double)*state.pressures, *state.failedRanging);
 
 // Outlier rejection
 #define RANGING_HISTORY_LENGTH 32
