@@ -97,7 +97,7 @@ static twrState_t state;
 static lpsTwrAlgoOptions_t* options = &defaultOptions;
 
 // LOG STATE after the state variable is initialized with default values
-DEBUG_PRINT("Initial state: distance = %f, pressures = %f, failedRanging = %d", *state.distance, *state.pressures, *state.failedRanging);
+DEBUG_PRINT("Initial state: distance = %f, pressures = %f, failedRanging = %d", (double)*state.distance, (double)*state.pressures, *state.failedRanging);
 
 // Outlier rejection
 #define RANGING_HISTORY_LENGTH 32
@@ -367,13 +367,13 @@ static uint32_t twrTagOnEvent(dwDevice_t *dev, uwbEvent_t event)
   switch(event) {
     case eventPacketReceived:
       // LOG STATE after the ranging report is received
-      DEBUG_PRINT("Ranging report received: distance = %f, pressures = %f, failedRanging = %d", *state.distance, *state.pressures, *state.failedRanging);
+      DEBUG_PRINT("Ranging report received: distance = %f, pressures = %f, failedRanging = %d", (double)*state.distance, (double)*state.pressures, *state.failedRanging);
 
       return rxcallback(dev);
       break;
     case eventPacketSent:
       // LOG STATE after a packet is sent
-      DEBUG_PRINT("Packet sent: distance = %f, pressures = %f, failedRanging = %d", *state.distance, *state.pressures, *state.failedRanging);
+      DEBUG_PRINT("Packet sent: distance = %f, pressures = %f, failedRanging = %d", (double)*state.distance, (double)*state.pressures, *state.failedRanging);
 
       txcallback(dev);
 
@@ -385,7 +385,7 @@ static uint32_t twrTagOnEvent(dwDevice_t *dev, uwbEvent_t event)
     case eventTimeout:  // Comes back to timeout after each ranging attempt
       {
         // LOG STATE after a timeout event occurs
-        DEBUG_PRINT("Timeout event occurred: distance = %f, pressures = %f, failedRanging = %d", *state.distance, *state.pressures, *state.failedRanging);
+        DEBUG_PRINT("Timeout event occurred: distance = %f, pressures = %f, failedRanging = %d", (double)*state.distance, (double)*state.pressures, *state.failedRanging);
 
         uint16_t rangingState = locoDeckGetRangingState();
         if (!ranging_complete && !lpp_transaction) {
