@@ -370,10 +370,10 @@ static uint32_t twrTagOnEvent(dwDevice_t *dev, uwbEvent_t event)
       DEBUG_PRINT("RR: d = %f\n", (double)*state.distance);
 
       return rxcallback(dev);
-      break;
+      brea
     case eventPacketSent:
       // LOG STATE after a packet is sent
-      DEBUG_PRINT("PS: d = %f\n", (double)*state.distance);
+      // DEBUG_PRINT("PS: d = %f\n", (double)*state.distance);
 
       txcallback(dev);
 
@@ -385,7 +385,7 @@ static uint32_t twrTagOnEvent(dwDevice_t *dev, uwbEvent_t event)
     case eventTimeout:  // Comes back to timeout after each ranging attempt
       {
         // LOG STATE after a timeout event occurs
-        DEBUG_PRINT("TE: d = %f\n", (double)*state.distance);
+        // DEBUG_PRINT("TE: d = %f\n", (double)*state.distance);
 
         uint16_t rangingState = locoDeckGetRangingState();
         if (!ranging_complete && !lpp_transaction) {
