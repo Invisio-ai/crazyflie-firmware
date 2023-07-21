@@ -112,7 +112,7 @@ static poseMeasurement_t ext_pose;
 
 static CRTPPacket pkRange;
 static uint8_t rangeIndex;
-static bool enableRangeStreamFloat = false;
+static bool enableRangeStreamFloat = true; // false (original default)
 
 #ifdef CONFIG_DECK_LIGHTHOUSE
 static CRTPPacket LhAngle;
@@ -462,7 +462,7 @@ PARAM_GROUP_START(locSrv)
 /**
  * @brief Enable CRTP stream of Loco node distance
  */
-  PARAM_ADD_CORE(PARAM_UINT8, enRangeStreamFP32, &enableRangeStreamFloat)
+  PARAM_ADD_CORE(PARAM_UINT8 | PARAM_PERSISTENT, enRangeStreamFP32, &enableRangeStreamFloat)
 /**
  * @brief Enable CRTP stream of Lighthouse sweep angles
  */
