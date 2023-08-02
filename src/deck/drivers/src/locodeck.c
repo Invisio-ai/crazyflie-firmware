@@ -473,6 +473,9 @@ static dwOps_t dwOps = {
 
 static void dwm1000Init(DeckInfo *info)
 {
+  // Print out the value of .usedGpio
+  DEBUG_PRINT("dwm1000_deck.usedGpio: 0x%X\n", dwm1000_deck.usedGpio);
+
   EXTI_InitTypeDef EXTI_InitStructure;
 
   spiBegin();
