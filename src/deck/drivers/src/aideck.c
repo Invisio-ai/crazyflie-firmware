@@ -341,7 +341,7 @@ static void aideckInit(DeckInfo *info)
   isInit = true;
 
   // Print out the value of .usedGpio using the DEBUG_PRINT macro
-  // DEBUG_PRINT("aideck_deck.usedGpio: %u\n", aideck_deck.usedGpio);
+  // DEBUG_PRINT("aideck_deck.usedGpio: %lu\n", aideck_deck.usedGpio);
 }
 
 static bool aideckTest()
