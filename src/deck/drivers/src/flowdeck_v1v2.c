@@ -181,7 +181,7 @@ static void flowdeck1Init()
     isInit1 = true;
 
     // Print out the value of .usedGpio for flowdeck1_deck using DEBUG_PRINT
-    //DEBUG_PRINT("flowdeck1_deck.usedGpio: %lu\n", flowdeck1_deck.usedGpio);
+    // DEBUG_PRINT("flowdeck1_deck.usedGpio: %lu\n", flowdeck1_deck.usedGpio);
   }
 }
 
@@ -230,7 +230,7 @@ static void flowdeck2Init()
     isInit2 = true;
 
     // Print out the value of .usedGpio for flowdeck1_deck using DEBUG_PRINT
-    DEBUG_PRINT("flowdeck1_deck.usedGpio: %lu\n", flowdeck1_deck.usedGpio);
+    // DEBUG_PRINT("flowdeck1_deck.usedGpio: %lu\n", flowdeck1_deck.usedGpio);
   }
 }
 
