@@ -582,8 +582,8 @@ static const DeckDriver dwm1000_deck = {
   #endif
 #else
    // (PC10/PC11 is UART1 TX/RX)
-  // .usedGpio = DECK_USING_IO_1 | DECK_USING_PC10 | DECK_USING_PC11,
-  .usedGpio = DECK_USING_IO_2 | DECK_USING_PC10 | DECK_USING_PC11,
+  .usedGpio = DECK_USING_IO_1 | DECK_USING_PC10 | DECK_USING_PC11,
+  // .usedGpio = DECK_USING_IO_2 | DECK_USING_PC10 | DECK_USING_PC11,
 #endif
   .usedPeriph = DECK_USING_SPI,
   .requiredEstimator = StateEstimatorTypeKalman,
