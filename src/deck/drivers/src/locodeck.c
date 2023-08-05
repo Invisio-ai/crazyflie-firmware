@@ -34,6 +34,7 @@
 
 #include <stdint.h>
 #include <string.h>
+#include <unistd.h>
 #include "stm32fxxx.h"
 
 #include "FreeRTOS.h"
@@ -473,6 +474,9 @@ static dwOps_t dwOps = {
 
 static void dwm1000Init(DeckInfo *info)
 {
+  DEBUG_PRINT("Initializing DWM1000 (delayed 3 seconds to enable NINA Bootloading on ESP32 on bcAI\n");
+  sleep(3);
+
   EXTI_InitTypeDef EXTI_InitStructure;
 
   spiBegin();
