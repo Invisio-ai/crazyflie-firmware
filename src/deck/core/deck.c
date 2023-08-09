@@ -56,14 +56,31 @@ void deckInit()
   for (i=0; i<nDecks; i++) {
     DeckInfo *deck = deckInfo(i);
 
-    if (deck->driver->init) {
-      if (deck->driver->name) {
-        DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
-      } else {
-        DEBUG_PRINT("Calling INIT for deck %i\n", i);
-      }
+    if (deck->driver->name != 'bcLoco') {
+      if (deck->driver->init) {
+        if (deck->driver->name) {
+          DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
+        } else {
+          DEBUG_PRINT("Calling INIT for deck %i\n", i);
+        }
 
-      deck->driver->init(deck);
+        deck->driver->init(deck);
+      }
+    }
+  }
+
+  for (i=0; i<nDecks; i++) {
+    DeckInfo *deck = deckInfo(i);
+
+    if (deck->driver->name == 'bcLoco') {
+      if (deck->driver->init) {
+        if (deck->driver->name) {
+          DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
+        } else {
+          DEBUG_PRINT("Calling INIT for deck %i\n", i);
+        }
+        deck->driver->init(deck);
+      }
     }
   }
 }
