@@ -475,7 +475,7 @@ static dwOps_t dwOps = {
 static void dwm1000Init(DeckInfo *info)
 {
   DEBUG_PRINT("Initializing DWM1000 (delayed 3 seconds to enable NINA Bootloading on ESP32 on bcAI\n");
-  sleepus(3000000); // 3 seconds delay to enable NINA Bootloading on ESP32 on bcAI IN MICROSECONDS (1 sec = 1e+6 us)
+  // sleepus(3000000); // 3 seconds delay to enable NINA Bootloading on ESP32 on bcAI IN MICROSECONDS (1 sec = 1e+6 us)
 
   EXTI_InitTypeDef EXTI_InitStructure;
 

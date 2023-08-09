@@ -546,8 +546,8 @@ void uartslkHandleDataFromISR(uint8_t c, BaseType_t * const pxHigherPriorityTask
       else if(!(CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk))
       {
         // Only assert if debugger is not connected
-        // ASSERT(0); // Queue overflow
-        ; // Disable queue overflow check to see if timer can work
+        ASSERT(0); // Queue overflow
+        // ; // Disable queue overflow check to see if timer can work
       }
     }
     else
