@@ -381,7 +381,7 @@ static const DeckDriver aideck_deck = {
     // .usedGpio = /*DECK_USING_IO_1 | */ DECK_USING_IO_4,
     // .usedPeriph = 0, // DECK_USING_UART2,
 
-    .usedGpio = DECK_USING_IO_! | DECK_USING_IO_4,
+    .usedGpio = DECK_USING_IO_1 | DECK_USING_IO_4,
     .usedPeriph = DECK_USING_UART2,
 
     .memoryDef = &espMemoryDef,
