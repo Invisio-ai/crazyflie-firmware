@@ -101,7 +101,7 @@ void deckInit()
 //       }
 //     }
 //   }
-// }
+}
 
 bool deckTest()
 {
