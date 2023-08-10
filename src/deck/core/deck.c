@@ -54,53 +54,53 @@ void deckInit()
   DEBUG_PRINT("%d deck(s) found\n", nDecks);
 
   // Original Version, loop through all decks without checking for any exceptions
-  // for (i=0; i<nDecks; i++) {
-  //   DeckInfo *deck = deckInfo(i);
+  for (i=0; i<nDecks; i++) {
+    DeckInfo *deck = deckInfo(i);
 
-  //   if (deck->driver->init) {
-  //     if (deck->driver->name) {
-  //       DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
-  //     } else {
-  //       DEBUG_PRINT("Calling INIT for deck %i\n", i);
-  //     }
-  //     deck->driver->init(deck);
-  //   }
-  // }
+    if (deck->driver->init) {
+      if (deck->driver->name) {
+        DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
+      } else {
+        DEBUG_PRINT("Calling INIT for deck %i\n", i);
+      }
+      deck->driver->init(deck);
+    }
+  }
 
 /*
 * Modified Version: initialize decks with ending exception added for bcLoco
 */
 
-  for (i=0; i<nDecks; i++) {
-    DeckInfo *deck = deckInfo(i);
+  // for (i=0; i<nDecks; i++) {
+  //   DeckInfo *deck = deckInfo(i);
 
-    if (strcmp(deck->driver->name, "bcLoco") != 0) {
-      if (deck->driver->init) {
-        if (deck->driver->name) {
-          DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
-        } else {
-          DEBUG_PRINT("Calling INIT for deck %i\n", i);
-        }
+  //   if (strcmp(deck->driver->name, "bcLoco") != 0) {
+  //     if (deck->driver->init) {
+  //       if (deck->driver->name) {
+  //         DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
+  //       } else {
+  //         DEBUG_PRINT("Calling INIT for deck %i\n", i);
+  //       }
 
-        deck->driver->init(deck);
-      }
-    }
-  }
+  //       deck->driver->init(deck);
+  //     }
+  //   }
+  // }
 
-  for (i=0; i<nDecks; i++) {
-    DeckInfo *deck = deckInfo(i);
+  // for (i=0; i<nDecks; i++) {
+  //   DeckInfo *deck = deckInfo(i);
 
-    if (strcmp(deck->driver->name, "bcLoco") == 0) {
-      if (deck->driver->init) {
-        if (deck->driver->name) {
-          DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
-        } else {
-          DEBUG_PRINT("Calling INIT for deck %i\n", i);
-        }
-        deck->driver->init(deck);
-      }
-    }
-  }
+  //   if (strcmp(deck->driver->name, "bcLoco") == 0) {
+  //     if (deck->driver->init) {
+  //       if (deck->driver->name) {
+  //         DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
+  //       } else {
+  //         DEBUG_PRINT("Calling INIT for deck %i\n", i);
+  //       }
+  //       deck->driver->init(deck);
+  //     }
+  //   }
+  // }
 
 }
 
