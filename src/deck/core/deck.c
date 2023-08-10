@@ -74,7 +74,7 @@ void deckInit()
   for (i=0; i<nDecks; i++) {
     DeckInfo *deck = deckInfo(i);
 
-    if (deck->driver->name != 'bcLoco') {
+    if (strcmp(deck->driver->name, "bcLoco") != 0) {
       if (deck->driver->init) {
         if (deck->driver->name) {
           DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
@@ -90,7 +90,7 @@ void deckInit()
   for (i=0; i<nDecks; i++) {
     DeckInfo *deck = deckInfo(i);
 
-    if (deck->driver->name == 'bcLoco') {
+    if (strcmp(deck->driver->name, "bcLoco") == 0) {
       if (deck->driver->init) {
         if (deck->driver->name) {
           DEBUG_PRINT("Calling INIT on driver %s for deck %i\n", deck->driver->name, i);
@@ -101,7 +101,7 @@ void deckInit()
       }
     }
   }
-  
+
 }
 
 bool deckTest()
