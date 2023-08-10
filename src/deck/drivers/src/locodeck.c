@@ -505,6 +505,7 @@ static void dwm1000Init(DeckInfo *info)
   dwInit(dwm, &dwOps);       // Init libdw
 
   int result = dwConfigure(dwm);
+  DEBUG_PRINT("dwConfigure result error code: %d\n", result);
   if (result != 0) {
     isInit = false;
     DEBUG_PRINT("Failed to configure DW1000!\r\n");
