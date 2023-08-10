@@ -379,7 +379,7 @@ static const DeckDriver aideck_deck = {
     .name = "bcAI",
 
     .usedGpio = /*DECK_USING_IO_1 | */ DECK_USING_IO_4,
-    .usedPeriph = 0, // DECK_USING_UART2,
+    .usedPeriph = DECK_USING_UART2, // 0,
 
     // .usedGpio = DECK_USING_IO_1 | DECK_USING_IO_4,
     // .usedPeriph = DECK_USING_UART2,
